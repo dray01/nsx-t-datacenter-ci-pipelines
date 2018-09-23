@@ -40,6 +40,9 @@
         validate_certs: False
         wait_time: 50
 
+    - name: Generate NSX self-signed certificate if it doens't exist
+      command: python nsx_t_gen.py --router_config false --generate_cert true
+
     - name: Wait 2 minutes before accessing NSX Manager API
       pause: minutes=2
 
